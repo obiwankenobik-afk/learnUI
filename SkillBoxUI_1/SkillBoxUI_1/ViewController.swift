@@ -7,17 +7,18 @@
 
 import UIKit
 class ViewController: UIViewController {
-    var counter = 0
-    @IBOutlet weak var counterLabel: UILabel!
+    @IBOutlet private weak var counterLabel: UILabel!
     
-    @IBAction func counterButton(_ sender: Any) {
-        counter += 1
-        counterLabel.text = "Нажатий: \(counter)"
-    }
+    private var counter = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .cyan
+    }
+    
+    @IBAction private func counterButton(_ sender: Any) {
+        counter += 1
+        counterLabel.text = "Нажатий: \(counter)"
     }
 }
 
