@@ -10,15 +10,15 @@ import UIKit
 final class ViewController: UIViewController {
     @IBOutlet weak var displayLabel: UILabel!
     ///переменная для проверки вводит пользователь число или он закончил операцию
-    var typingNumber = false
-    var firstNumber: Double = 0
-    var secondNumber: Double = 0
+    private var typingNumber = false
+    private var firstNumber: Double = 0
+    private var secondNumber: Double = 0
     ///какой знак вычисления выбрали
-    var operationType: MathOperation?
+    private var operationType: MathOperation?
     ///для проверки стоит точка или нет
-    var dotIsPlace = false
+    private var dotIsPlace = false
     ///вычисляемое значение (число, которое на экране) + удаляю с его помощью точки
-    var currentInput: Double {
+    private var currentInput: Double {
         get {
             let text = displayLabel.text ?? "0"
             return Double(text) ?? 0
@@ -42,7 +42,7 @@ final class ViewController: UIViewController {
     }
     
     //нажатие 0-9
-    @IBAction func nubmerPressed(_ sender: UIButton) {
+    @IBAction private func nubmerPressed(_ sender: UIButton) {
         guard
             //прикол поделится прикол пофикшен
             let title = sender.titleLabel?.text,
@@ -61,12 +61,11 @@ final class ViewController: UIViewController {
             displayLabel.text = title
             return
         }
-        
         displayLabel.text = currentValue + title
     }
     
     //нажатие операции
-    @IBAction func activeComputing(_ sender: UIButton) {
+    @IBAction private func activeComputing(_ sender: UIButton) {
         guard
             let text = sender.titleLabel?.text,
             let operation = MathOperation(rawValue: text)
@@ -79,7 +78,7 @@ final class ViewController: UIViewController {
     }
     
     //вычисление
-    @IBAction func equalityPressed(_ sender: UIButton) {
+    @IBAction private func equalityPressed(_ sender: UIButton) {
         guard let operation = operationType else { return }
         
         if typingNumber {
@@ -102,10 +101,9 @@ final class ViewController: UIViewController {
         }
         operationType = nil
         dotIsPlace = false
-        
     }
     
-    func resetAll() {
+    private func resetAll() {
         firstNumber = 0
         secondNumber = 0
         currentInput = 0
@@ -115,7 +113,7 @@ final class ViewController: UIViewController {
         operationType = nil
     }
     
-    @IBAction func otherOperation(_ sender: UIButton) {
+    @IBAction private func otherOperation(_ sender: UIButton) {
         guard
             let title = sender.titleLabel?.text,
             let operation = OtherOperation(rawValue: title)
