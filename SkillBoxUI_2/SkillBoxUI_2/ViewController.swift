@@ -8,125 +8,129 @@
 import UIKit
 
 final class ViewController: UIViewController {
+    //MARK: Переменные для состояния, дисплей, главный экран.
     @IBOutlet weak var displayLabel: UILabel!
-    ///переменная для проверки вводит пользователь число или он закончил операцию
+    
     private var typingNumber = false
     private var firstNumber: Double = 0
     private var secondNumber: Double = 0
-    ///какой знак вычисления выбрали
     private var operationType: MathOperation?
-    ///для проверки стоит точка или нет
     private var dotIsPlace = false
-    ///вычисляемое значение (число, которое на экране) + удаляю с его помощью точки
-    private var currentInput: Double {
-        get {
-            let text = displayLabel.text ?? "0"
-            return Double(text) ?? 0
-        }
-        set {
-            let value = Int(newValue)
-            let helpValue = newValue - Double(value)
-            if helpValue != 0 {
-                displayLabel.text =  "\(newValue)"
-            } else {
-                displayLabel.text = "\(value)"
-            }
-            
-            typingNumber = false
-        }
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .black
     }
+}
+
+//MARK: Работа с дисплеем.
+private extension ViewController {
     
-    //нажатие 0-9
-    @IBAction private func nubmerPressed(_ sender: UIButton) {
-        guard
-            //прикол поделится прикол пофикшен
-            let title = sender.titleLabel?.text,
-            let currentValue = displayLabel.text
-        else { return }
+    /// Строка, отображаемая в лейбле
+    var displayText: String {
+        get { displayLabel.text ?? "0" }
+        set { displayLabel.text = newValue }
+    }
+    
+    /// Числовое значение дисплея
+    var displayValue: Double {
+        get { Double(displayText) ?? 0 }
+        set {
+            //проверка на целое число
+            if newValue.truncatingRemainder(dividingBy: 1) == 0 {
+                displayText = "\(Int(newValue))"
+            } else {
+                displayText = "\(newValue)"
+            }
+            typingNumber = false
+        }
+    }
+}
+
+//MARK: Взаимодействия с кнопками.
+private extension ViewController {
+    
+    ///нажатие 0-9
+    @IBAction func nubmerPressed(_ sender: UIButton) {
+        guard let digit = sender.titleLabel?.text else { return }
         
-        // если пользователь только начал ввод
-        guard typingNumber else {
-            displayLabel.text = title
+        if !typingNumber {
+            displayText = digit
             typingNumber = true
             return
         }
         
-        // меняем начальный "0"
-        guard currentValue != "0" else {
-            displayLabel.text = title
-            return
+        if displayText == "0" {
+            displayText = digit
+        } else {
+            displayText.append(digit)
         }
-        displayLabel.text = currentValue + title
     }
     
-    //нажатие операции
-    @IBAction private func activeComputing(_ sender: UIButton) {
+    ///нажатие  + - × ÷
+    @IBAction func activeComputing(_ sender: UIButton) {
         guard
-            let text = sender.titleLabel?.text,
-            let operation = MathOperation(rawValue: text)
+            let symbol = sender.titleLabel?.text,
+            let operation = MathOperation(rawValue: symbol)
         else { return }
         
+        firstNumber = displayValue
         operationType = operation
-        firstNumber = currentInput
         typingNumber = false
         dotIsPlace = false
     }
     
-    //вычисление
-    @IBAction private func equalityPressed(_ sender: UIButton) {
+    ///нажатие =
+    @IBAction func equalityPressed(_ sender: UIButton) {
         guard let operation = operationType else { return }
         
         if typingNumber {
-            secondNumber = currentInput
+            secondNumber = displayValue
         }
         
-        switch operation{
-        case .add:
-            currentInput = firstNumber + secondNumber
-        case .subtract:
-            currentInput = firstNumber - secondNumber
-        case .multiply:
-            currentInput = firstNumber * secondNumber
-        case .divide:
-            guard secondNumber != 0 else {
-                resetAll()
-                return
-            }
-            currentInput = firstNumber / secondNumber
-        }
+        calculate(operation)
         operationType = nil
         dotIsPlace = false
     }
     
-    private func resetAll() {
-        firstNumber = 0
-        secondNumber = 0
-        currentInput = 0
-        displayLabel.text = "0"
-        typingNumber = false
-        dotIsPlace = false
-        operationType = nil
-    }
-    
-    @IBAction private func otherOperation(_ sender: UIButton) {
+    ///нажатие оставшихся операций
+    @IBAction func otherOperation(_ sender: UIButton) {
         guard
             let title = sender.titleLabel?.text,
             let operation = OtherOperation(rawValue: title)
         else { return }
         
+        calculateOtherOperation(operation)
+    }
+}
+
+//MARK: Логика.
+private extension ViewController {
+    
+    func calculate(_ operation: MathOperation) {
+        switch operation {
+        case .add:
+            displayValue = firstNumber + secondNumber
+        case .subtract:
+            displayValue = firstNumber - secondNumber
+        case .multiply:
+            displayValue = firstNumber * secondNumber
+        case .divide:
+            guard secondNumber != 0 else {
+                resetAll()
+                return
+            }
+            displayValue = firstNumber / secondNumber
+        }
+    }
+    
+    func calculateOtherOperation(_ operation: OtherOperation) {
         switch operation {
             
         case .deleteLastNumber:
-            guard let text = displayLabel.text, !text.isEmpty else { return }
-            displayLabel.text = String(text.dropLast())
-            
-            if displayLabel.text == "" {
-                displayLabel.text = "0"
+            displayText = String(displayText.dropLast())
+            if displayText.isEmpty {
+                displayText = "0"
                 typingNumber = false
             }
             
@@ -135,34 +139,40 @@ final class ViewController: UIViewController {
             
         case .percentPressed:
             if operationType == nil {
-                currentInput = currentInput / 100
+                displayValue /= 100
             } else {
-                secondNumber = firstNumber * currentInput / 100
-                currentInput = secondNumber
+                secondNumber = firstNumber * displayValue / 100
+                displayValue = secondNumber
             }
-            typingNumber = false
-            dotIsPlace = false
             
         case .plusAndMinus:
-            currentInput = -currentInput
+            displayValue = -displayValue
             typingNumber = true
             
         case .makeDoubleNumber:
-            if typingNumber && !dotIsPlace {
-                displayLabel.text?.append(".")
-                dotIsPlace = true
-                
-            } else if !typingNumber && !dotIsPlace {
-                displayLabel.text = "0."
+            guard !dotIsPlace else { return }
+            
+            if typingNumber {
+                displayText.append(".")
+            } else {
+                displayText = "0."
                 typingNumber = true
-                dotIsPlace = true
             }
+            dotIsPlace = true
         }
+    }
+    
+    func resetAll() {
+        firstNumber = 0
+        secondNumber = 0
+        operationType = nil
+        typingNumber = false
+        dotIsPlace = false
+        displayText = "0"
     }
 }
 
-
-
+//MARK: Перечисления операций.
 extension ViewController {
     enum MathOperation: String {
         case add = "+"
