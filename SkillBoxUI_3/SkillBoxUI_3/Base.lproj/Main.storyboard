@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="24412" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="duz-IF-rr9">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24405"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--2 уровень-->
+        <scene sceneID="shT-A5-BEJ">
+            <objects>
+                <navigationController interactionActivityTrackingBaseName="2 уровень" id="T8l-dL-vfK" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="2 уровень" id="vsC-cr-6v9"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="LfL-bF-goe">
+                        <rect key="frame" x="0.0" y="118" width="393" height="54"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="kGk-om-k63" kind="relationship" relationship="rootViewController" id="wJo-CV-13G"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nsn-XN-X4U" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="210" y="182"/>
+        </scene>
+        <!--1 вкладка 2 уровень-->
+        <scene sceneID="TyS-dp-KEW">
+            <objects>
+                <viewController id="kGk-om-k63" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6xX-YQ-Tdk">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k3E-LN-fYY">
+                                <rect key="frame" x="159" y="436.33333333333331" width="75" height="34.333333333333314"/>
+                                <color key="backgroundColor" red="0.072295255959033966" green="0.81977838277816772" blue="0.12002476304769516" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <segue destination="M3G-uZ-f1d" kind="show" id="H5P-VV-041"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="UC2-rG-VpB"/>
+                        <color key="backgroundColor" systemColor="systemPinkColor"/>
+                        <constraints>
+                            <constraint firstItem="k3E-LN-fYY" firstAttribute="centerY" secondItem="UC2-rG-VpB" secondAttribute="centerY" id="P2I-iN-ddl"/>
+                            <constraint firstItem="k3E-LN-fYY" firstAttribute="centerX" secondItem="UC2-rG-VpB" secondAttribute="centerX" id="lp9-RB-4zC"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="1 вкладка 2 уровень" id="gMo-KL-rav"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6AW-xl-EIg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1172" y="182"/>
+        </scene>
+        <!--1 вкладка 3 уровень-->
+        <scene sceneID="sL8-gN-trf">
+            <objects>
+                <viewController title="1 вкладка 3 уровень" id="HZg-wg-ArN" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Moi-a2-bzN">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P0x-7N-N3l">
+                                <rect key="frame" x="159" y="436" width="75" height="35"/>
+                                <color key="backgroundColor" red="0.072295255959033966" green="0.81977838277816772" blue="0.12002476304769516" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <segue destination="tfO-Jx-84e" kind="show" id="mR8-aO-tOY"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="sts-BT-9Px"/>
+                        <color key="backgroundColor" systemColor="systemTealColor"/>
+                        <constraints>
+                            <constraint firstItem="P0x-7N-N3l" firstAttribute="centerX" secondItem="sts-BT-9Px" secondAttribute="centerX" id="New-wt-azL"/>
+                            <constraint firstItem="P0x-7N-N3l" firstAttribute="centerY" secondItem="sts-BT-9Px" secondAttribute="centerY" id="fPu-l4-yUf"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="1 вкладка 3 уровень" id="1Yo-dZ-lDq"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0Zc-Fy-yJO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1172" y="975"/>
+        </scene>
+        <!--2 вкладка 2 уровень-->
+        <scene sceneID="Qze-5I-wRj">
+            <objects>
+                <viewController id="M3G-uZ-f1d" customClass="WarningViewController" customModule="SkillBoxUI_3" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NAR-Zb-kjS">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e6b-Vt-SKE">
+                                <rect key="frame" x="159" y="436" width="75" height="35"/>
+                                <color key="backgroundColor" red="0.072295255959033966" green="0.81977838277816772" blue="0.12002476304769516" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <action selector="showAlertButtonTapped:" destination="M3G-uZ-f1d" eventType="touchUpInside" id="vdL-O8-J4W"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="QNF-J4-vGE"/>
+                        <color key="backgroundColor" systemColor="systemRedColor"/>
+                        <color key="tintColor" name="AccentColor"/>
+                        <constraints>
+                            <constraint firstItem="e6b-Vt-SKE" firstAttribute="centerX" secondItem="QNF-J4-vGE" secondAttribute="centerX" id="Xoz-Ef-Hid"/>
+                            <constraint firstItem="e6b-Vt-SKE" firstAttribute="centerY" secondItem="QNF-J4-vGE" secondAttribute="centerY" id="fkz-Xt-rxg"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="2 вкладка 2 уровень" id="vbE-fT-ROa"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TB4-TU-xJK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2250" y="182"/>
+        </scene>
+        <!--3 уровень-->
+        <scene sceneID="OYQ-Ug-iv5">
+            <objects>
+                <navigationController id="uFp-T6-IbC" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="3 уровень" id="DM5-JC-ItP"/>
+                    <navigationItem key="navigationItem" id="zJl-tD-d6b"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ajX-Nh-lXz">
+                        <rect key="frame" x="0.0" y="118" width="393" height="54"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="HZg-wg-ArN" kind="relationship" relationship="rootViewController" id="Rwr-gm-bdt"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qr9-t8-076" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="210" y="975"/>
+        </scene>
+        <!--2 вкладка 3 уровень-->
+        <scene sceneID="emy-S5-0jZ">
+            <objects>
+                <viewController id="tfO-Jx-84e" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8si-eh-cB0">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UBZ-7b-fCB">
+                                <rect key="frame" x="159" y="436" width="75" height="35"/>
+                                <color key="backgroundColor" red="0.072295255959033966" green="0.81977838277816772" blue="0.12002476304769516" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <segue destination="I8y-sW-id9" kind="show" id="vKH-6f-cGd"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="gda-Sw-5do"/>
+                        <color key="backgroundColor" systemColor="systemCyanColor"/>
+                        <constraints>
+                            <constraint firstItem="UBZ-7b-fCB" firstAttribute="centerY" secondItem="gda-Sw-5do" secondAttribute="centerY" id="Hux-AY-ahC"/>
+                            <constraint firstItem="UBZ-7b-fCB" firstAttribute="centerX" secondItem="gda-Sw-5do" secondAttribute="centerX" id="lKT-bu-7R0"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="2 вкладка 3 уровень" id="g2C-aR-Hmm"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="guz-Py-mwp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2191.6030534351144" y="974.64788732394368"/>
+        </scene>
+        <!--3 вкладка 3 уровень-->
+        <scene sceneID="okf-lg-ORv">
+            <objects>
+                <viewController id="I8y-sW-id9" customClass="WarningViewController" customModule="SkillBoxUI_3" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YJV-fj-vfv">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lGJ-wz-xV3">
+                                <rect key="frame" x="159" y="436.33333333333331" width="75" height="34.333333333333314"/>
+                                <color key="backgroundColor" red="0.072295255959033966" green="0.81977838277816772" blue="0.12002476304769516" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <action selector="showAlertButtonTapped:" destination="I8y-sW-id9" eventType="touchUpInside" id="lcc-te-fFO"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="wH3-Ge-tbm"/>
+                        <color key="backgroundColor" red="0.083826221525669098" green="0.77635127305984497" blue="0.65056377649307251" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="lGJ-wz-xV3" firstAttribute="centerX" secondItem="wH3-Ge-tbm" secondAttribute="centerX" id="0Ft-ZI-0c9"/>
+                            <constraint firstItem="lGJ-wz-xV3" firstAttribute="centerY" secondItem="wH3-Ge-tbm" secondAttribute="centerY" id="EZu-sc-Wz3"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="3 вкладка 3 уровень" id="beX-cG-Cay"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hQB-TD-myi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3200.7633587786258" y="974.64788732394368"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="298-cY-raB">
+            <objects>
+                <tabBarController id="duz-IF-rr9" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Ysg-53-3VJ">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="9qs-jA-Cuz" kind="relationship" relationship="viewControllers" id="rh3-cO-Yfp"/>
+                        <segue destination="T8l-dL-vfK" kind="relationship" relationship="viewControllers" id="dQu-CA-q8Z"/>
+                        <segue destination="uFp-T6-IbC" kind="relationship" relationship="viewControllers" id="duJ-M5-5kH"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HZe-gS-qVt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1285" y="182"/>
+        </scene>
+        <!--1 вкладка 1 уровень-->
+        <scene sceneID="sT2-69-bKu">
+            <objects>
+                <viewController title="1 вкладка 1 уровень" interactionActivityTrackingBaseName="1 вкладка 1 уровень" id="9qs-jA-Cuz" customClass="WarningViewController" customModule="SkillBoxUI_3" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Vnb-zg-Jzn">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SNR-us-UY4">
+                                <rect key="frame" x="159" y="409" width="75" height="35"/>
+                                <color key="backgroundColor" red="0.072295255959033966" green="0.81977838277816772" blue="0.12002476304769516" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <action selector="showAlertButtonTapped:" destination="9qs-jA-Cuz" eventType="touchUpInside" id="5cB-5b-3Af"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="9MD-Le-mtI"/>
+                        <color key="backgroundColor" systemColor="systemYellowColor"/>
+                        <color key="tintColor" name="AccentColor"/>
+                        <constraints>
+                            <constraint firstItem="SNR-us-UY4" firstAttribute="centerX" secondItem="9MD-Le-mtI" secondAttribute="centerX" id="Zv9-bZ-WLh"/>
+                            <constraint firstItem="SNR-us-UY4" firstAttribute="centerY" secondItem="9MD-Le-mtI" secondAttribute="centerY" id="zO1-Iv-MQs"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="1 уровень" id="VB2-h8-KQk"/>
+                    <navigationItem key="navigationItem" title="Title" id="nyY-9V-7g2"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iyT-z8-dsf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="209.92366412213741" y="-616.19718309859161"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemCyanColor">
+            <color red="0.1960784314" green="0.67843137249999996" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.18823529410000001" green="0.69019607839999997" blue="0.78039215689999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
