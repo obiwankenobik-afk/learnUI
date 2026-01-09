@@ -6,17 +6,15 @@
 //
 
 import UIKit
-
 final class WarningViewController: UIViewController {
-
+    
     @IBAction func showAlertButtonTapped(_ sender: UIButton) {
         showLastScreenAlert()
     }
 }
 
-
 private extension WarningViewController {
-
+    
     func showLastScreenAlert() {
         let alert = UIAlertController(title: "Последний экран", message: "Это последний экран в данной вкладке", preferredStyle: .alert)
 

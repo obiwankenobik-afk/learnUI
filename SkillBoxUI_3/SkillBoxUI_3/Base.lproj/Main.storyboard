@@ -12,12 +12,16 @@
         <!--2 уровень-->
         <scene sceneID="shT-A5-BEJ">
             <objects>
-                <navigationController interactionActivityTrackingBaseName="2 уровень" id="T8l-dL-vfK" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="2 уровень" id="vsC-cr-6v9"/>
+                <navigationController interactionActivityTrackingBaseName="2 уровень" toolbarHidden="NO" id="T8l-dL-vfK" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="2 уровень" image="icons8-lotto-25" selectedImage="icons8-lotto-25" id="vsC-cr-6v9"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="LfL-bF-goe">
                         <rect key="frame" x="0.0" y="118" width="393" height="54"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="RRn-9B-88Z">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="kGk-om-k63" kind="relationship" relationship="rootViewController" id="wJo-CV-13G"/>
                     </connections>
@@ -127,7 +131,7 @@
         <scene sceneID="OYQ-Ug-iv5">
             <objects>
                 <navigationController id="uFp-T6-IbC" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="3 уровень" id="DM5-JC-ItP"/>
+                    <tabBarItem key="tabBarItem" title="3 уровень" image="icons8-slot-machine-25" selectedImage="icons8-slot-machine-25" id="DM5-JC-ItP"/>
                     <navigationItem key="navigationItem" id="zJl-tD-d6b"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ajX-Nh-lXz">
                         <rect key="frame" x="0.0" y="118" width="393" height="54"/>
@@ -209,10 +213,12 @@
         <scene sceneID="298-cY-raB">
             <objects>
                 <tabBarController id="duz-IF-rr9" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Ysg-53-3VJ">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="Ysg-53-3VJ">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" name="AccentColor"/>
+                        <color key="selectedImageTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="9qs-jA-Cuz" kind="relationship" relationship="viewControllers" id="rh3-cO-Yfp"/>
@@ -233,7 +239,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SNR-us-UY4">
-                                <rect key="frame" x="159" y="409" width="75" height="35"/>
+                                <rect key="frame" x="159" y="409.33333333333331" width="75" height="34.333333333333314"/>
                                 <color key="backgroundColor" red="0.072295255959033966" green="0.81977838277816772" blue="0.12002476304769516" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
@@ -247,11 +253,13 @@
                         <color key="backgroundColor" systemColor="systemYellowColor"/>
                         <color key="tintColor" name="AccentColor"/>
                         <constraints>
+                            <constraint firstItem="SNR-us-UY4" firstAttribute="centerY" secondItem="9MD-Le-mtI" secondAttribute="centerY" id="WYH-t7-dgQ"/>
                             <constraint firstItem="SNR-us-UY4" firstAttribute="centerX" secondItem="9MD-Le-mtI" secondAttribute="centerX" id="Zv9-bZ-WLh"/>
-                            <constraint firstItem="SNR-us-UY4" firstAttribute="centerY" secondItem="9MD-Le-mtI" secondAttribute="centerY" id="zO1-Iv-MQs"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="1 уровень" id="VB2-h8-KQk"/>
+                    <tabBarItem key="tabBarItem" title="1 уровень" image="icons8-cards-25" selectedImage="icons8-cards-25" id="VB2-h8-KQk">
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
+                    </tabBarItem>
                     <navigationItem key="navigationItem" title="Title" id="nyY-9V-7g2"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iyT-z8-dsf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -260,6 +268,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="icons8-cards-25" width="25" height="25"/>
+        <image name="icons8-lotto-25" width="25" height="25"/>
+        <image name="icons8-slot-machine-25" width="25" height="25"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
