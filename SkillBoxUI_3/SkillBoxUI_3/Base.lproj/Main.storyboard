@@ -13,7 +13,7 @@
         <scene sceneID="shT-A5-BEJ">
             <objects>
                 <navigationController interactionActivityTrackingBaseName="2 уровень" toolbarHidden="NO" id="T8l-dL-vfK" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="2 уровень" image="icons8-lotto-25" selectedImage="icons8-lotto-25" id="vsC-cr-6v9"/>
+                    <tabBarItem key="tabBarItem" title="2 уровень" image="icons8-games" selectedImage="icons8-games" id="vsC-cr-6v9"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="LfL-bF-goe">
                         <rect key="frame" x="0.0" y="118" width="393" height="54"/>
@@ -131,7 +131,7 @@
         <scene sceneID="OYQ-Ug-iv5">
             <objects>
                 <navigationController id="uFp-T6-IbC" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="3 уровень" image="icons8-slot-machine-25" selectedImage="icons8-slot-machine-25" id="DM5-JC-ItP"/>
+                    <tabBarItem key="tabBarItem" title="3 уровень" image="icons8-games-2" selectedImage="icons8-games-2" id="DM5-JC-ItP"/>
                     <navigationItem key="navigationItem" id="zJl-tD-d6b"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ajX-Nh-lXz">
                         <rect key="frame" x="0.0" y="118" width="393" height="54"/>
@@ -257,7 +257,7 @@
                             <constraint firstItem="SNR-us-UY4" firstAttribute="centerX" secondItem="9MD-Le-mtI" secondAttribute="centerX" id="Zv9-bZ-WLh"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="1 уровень" image="icons8-cards-25" selectedImage="icons8-cards-25" id="VB2-h8-KQk">
+                    <tabBarItem key="tabBarItem" title="1 уровень" image="icons8-games-25" selectedImage="icons8-games-25" id="VB2-h8-KQk">
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
                     </tabBarItem>
                     <navigationItem key="navigationItem" title="Title" id="nyY-9V-7g2"/>
@@ -268,9 +268,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="icons8-cards-25" width="25" height="25"/>
-        <image name="icons8-lotto-25" width="25" height="25"/>
-        <image name="icons8-slot-machine-25" width="25" height="25"/>
+        <image name="icons8-games" width="25" height="25"/>
+        <image name="icons8-games-2" width="25" height="25"/>
+        <image name="icons8-games-25" width="25" height="25"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
