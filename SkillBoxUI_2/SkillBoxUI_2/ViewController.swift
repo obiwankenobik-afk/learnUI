@@ -8,26 +8,19 @@
 import UIKit
 
 final class ViewController: UIViewController {
-    //MARK: Переменные для состояния, дисплей, главный экран.
     @IBOutlet weak var displayLabel: UILabel!
-    
     private var firstNumber: Double = 0
     private var operationType: MathOperation?
     
     /// Строка, отображаемая в лейбле
     var displayText: String = "0" {
-        didSet {
-            displayLabel.text = displayText
-        }
+        didSet { displayLabel.text = displayText }
     }
     
     /// Числовое значение дисплея
     var displayValue: Double {
         get { Double(displayText) ?? 0 }
-        set {
-            //проверка на целое число
-            displayText = newValue.truncatingRemainder(dividingBy: 1) == 0 ? "\(Int(newValue))" : "\(newValue)"
-        }
+        set { formatTextDouble(for: newValue) }
     }
     
     override func viewDidLoad() {
@@ -36,68 +29,46 @@ final class ViewController: UIViewController {
     }
 }
 
-//MARK: Взаимодействия с кнопками.
+// MARK: - Логика
 private extension ViewController {
-    
-    ///нажатие 0-9
-    @IBAction func nubmerPressed(_ sender: UIButton) {
-        guard let digit = sender.titleLabel?.text else { return }
-        
-        if displayText == "0" {
-            displayText = digit
-        } else {
-            displayText.append(digit)
-        }
+    /// проверка на целое число
+    func formatTextDouble (for number: Double) {
+        displayText = number.truncatingRemainder(dividingBy: 1) == 0
+        ? "\(Int(number))"
+        : "\(number)"
     }
     
-    ///нажатие  + - × ÷
-    @IBAction func activeComputing(_ sender: UIButton) {
-        guard
-            let symbol = sender.titleLabel?.text,
-            let operation = MathOperation(rawValue: symbol)
-        else { return }
-        
-        firstNumber = displayValue
-        operationType = operation
-        displayText = "0"
-    }
-    
-    ///нажатие =
-    @IBAction func equalityPressed(_ sender: UIButton) {
-        guard let operation = operationType else { return }
-        
-        calculate(operation)
-        operationType = nil
-    }
-    
-    ///нажатие оставшихся операций
-    @IBAction func otherOperation(_ sender: UIButton) {
-        guard
-            let title = sender.titleLabel?.text,
-            let operation = OtherOperation(rawValue: title)
-        else { return }
-        
-        calculateOtherOperation(operation)
-    }
-}
-
-//MARK: Логика.
-private extension ViewController {
-    
-    func divide() {
+    func divide() throws {
         guard displayValue != 0 else {
-            resetAll()
-            return
+            displayText = CustomError.divideZero.errorDescription
+            throw CustomError.divideZero
         }
         displayValue = firstNumber / displayValue
     }
     
+    func add() {
+        displayValue = firstNumber + displayValue
+    }
+    
+    func subtract() {
+        displayValue = firstNumber - displayValue
+    }
+    
+    func multiply() {
+        displayValue = firstNumber * displayValue
+    }
+    
     func calculate(_ operation: MathOperation) {
         switch operation {
-        case .add: displayValue = firstNumber + displayValue
-        case .subtract: displayValue = firstNumber - displayValue
-        case .multiply: displayValue = firstNumber * displayValue
-        case .divide: divide()
+        case .add: add()
+        case .subtract: subtract()
+        case .multiply: multiply()
+        case .divide:
+            do {
+                try divide()
+            } catch {
+                operationType = nil
+            }
         }
     }
     
@@ -109,10 +80,10 @@ private extension ViewController {
     }
     
     func percentPressed(){
-        if operationType == nil {
-            displayValue /= 100
-        } else {
+        if let _ = operationType {
             displayValue = firstNumber * displayValue / 100
+        } else {
+            displayValue /= 100
         }
     }
     
@@ -132,37 +103,70 @@ private extension ViewController {
         displayText = "0"
     }
     
+    func plusAndMinus() {
+        displayValue = -displayValue
+    }
+    
     func calculateOtherOperation(_ operation: OtherOperation) {
         switch operation {
         case .deleteLastNumber: deleteLastNumber()
-            
         case .deleteAllNumber: resetAll()
-            
         case .percentPressed: percentPressed()
-            
-        case .plusAndMinus: displayValue = -displayValue
-            
+        case .plusAndMinus: plusAndMinus()
         case .makeDoubleNumber: makeDoubleNumber()
         }
     }
 }
 
-//MARK: Перечисления операций.
-extension ViewController {
-    enum MathOperation: String {
-        case add = "+"
-        case subtract = "-"
-        case multiply = "×"
-        case divide = "÷"
+// MARK: - Взаимодействия с кнопками
+private extension ViewController {
+    /// нажатие 0-9
+    @IBAction func numberPressed(_ sender: UIButton) {
+        guard let digit = sender.titleLabel?.text else { return }
+        
+        if Double(displayText) == nil {
+            displayText = digit
+            return
+        }
+        
+        if displayText == "0" {
+            displayText = digit
+        } else {
+            displayText.append(digit)
+        }
     }
     
-    enum OtherOperation: String {
-        case deleteLastNumber = " "
-        case deleteAllNumber = "AC"
-        case percentPressed = "%"
-        case plusAndMinus = "+/-"
-        case makeDoubleNumber = "."
+    /// нажатие  + - × ÷
+    @IBAction func activeComputing(_ sender: UIButton) {
+        guard
+            let symbol = sender.titleLabel?.text,
+            let operation = MathOperation(rawValue: symbol)
+        else { return }
+        
+        firstNumber = displayValue
+        operationType = operation
+        displayText = "0"
+    }
+    
+    /// нажатие =
+    @IBAction func equalityPressed(_ sender: UIButton) {
+        guard let operation = operationType else { return }
+        
+        calculate(operation)
+        operationType = nil
+    }
+    
+    /// нажатие оставшихся операций
+    @IBAction func otherOperation(_ sender: UIButton) {
+        guard
+            let title = sender.titleLabel?.text,
+            let operation = OtherOperation(rawValue: title)
+        else { return }
+        
+        calculateOtherOperation(operation)
     }
 }
+
+
 
 
