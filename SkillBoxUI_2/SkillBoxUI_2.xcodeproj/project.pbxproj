@@ -10,22 +10,9 @@
 		3B1D48282EEDAB4700778734 /* SkillBoxUI_2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkillBoxUI_2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		3B1D483A2EEDAB4900778734 /* Exceptions for "SkillBoxUI_2" folder in "SkillBoxUI_2" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Info.plist,
-			);
-			target = 3B1D48272EEDAB4700778734 /* SkillBoxUI_2 */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
-
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		3B1D482A2EEDAB4700778734 /* SkillBoxUI_2 */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				3B1D483A2EEDAB4900778734 /* Exceptions for "SkillBoxUI_2" folder in "SkillBoxUI_2" target */,
-			);
 			path = SkillBoxUI_2;
 			sourceTree = "<group>";
 		};
