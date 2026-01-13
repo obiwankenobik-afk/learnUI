@@ -32,17 +32,89 @@ private extension ViewController {
         set { displayLabel.text = newValue }
     }
     
-    /// Числовое значение дисплея
-    var displayValue: Double {
-        get { Double(displayText) ?? 0 }
-        set {
-            //проверка на целое число
-            if newValue.truncatingRemainder(dividingBy: 1) == 0 {
-                displayText = "\(Int(newValue))"
-            } else {
-                displayText = "\(newValue)"
-            }
-            typingNumber = false
+    func divide() throws {
+        guard displayValue != 0 else {
+            displayText = CustomError.divideZero.errorDescription
+            throw CustomError.divideZero
+        }
+    }
+    
+    func add() {
+        displayValue = firstNumber + displayValue
+    }
+    
+    func subtract() {
+        displayValue = firstNumber - displayValue
+    }
+    
+    func multiply() {
+        displayValue = firstNumber * displayValue
+    }
+    
+    func divisionByZero() {
+        operationType = nil
+        displayValue = firstNumber / displayValue
+    }
+    
+    func catchError() {
+        do {
+            try divide()
+        } catch {
+            divisionByZero()
+        }
+    }
+    
+    func calculate(_ operation: MathOperation) {
+        switch operation {
+        case .add: add()
+        case .subtract: subtract()
+        case .multiply: multiply()
+        case .divide: catchError()
+        }
+    }
+    
+    func deleteLastNumber() {
+        displayText = String(displayText.dropLast())
+        if displayText.isEmpty {
+            displayText = "0"
+        }
+    }
+    
+    func percentPressed() {
+        if let _ = operationType {
+            displayValue = firstNumber * displayValue / 100
+        } else {
+            displayValue /= 100
+        }
+    }
+    
+    func makeDoubleNumber() {
+        guard !displayText.contains(".") else { return }
+        
+        if displayText == "0" {
+            displayText = "0."
+        } else {
+            displayText.append(".")
+        }
+    }
+    
+    func resetAll() {
+        firstNumber = 0
+        operationType = nil
+        displayText = "0"
+    }
+    
+    func plusAndMinus() {
+        displayValue = -displayValue
+    }
+    
+    func calculateOtherOperation(_ operation: OtherOperation) {
+        switch operation {
+        case .deleteLastNumber: deleteLastNumber()
+        case .deleteAllNumber: resetAll()
+        case .percentPressed: percentPressed()
+        case .plusAndMinus: plusAndMinus()
+        case .makeDoubleNumber: makeDoubleNumber()
         }
     }
 }
