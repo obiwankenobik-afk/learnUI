@@ -43,7 +43,6 @@ private extension ViewController {
             displayText = CustomError.divideZero.errorDescription
             throw CustomError.divideZero
         }
-        displayValue = firstNumber / displayValue
     }
     
     func add() {
@@ -58,17 +57,25 @@ private extension ViewController {
         displayValue = firstNumber * displayValue
     }
     
+    func divisionByZero() {
+        operationType = nil
+        displayValue = firstNumber / displayValue
+    }
+    
+    func catchError() {
+        do {
+            try divide()
+        } catch {
+            divisionByZero()
+        }
+    }
+    
     func calculate(_ operation: MathOperation) {
         switch operation {
         case .add: add()
         case .subtract: subtract()
         case .multiply: multiply()
-        case .divide:
-            do {
-                try divide()
-            } catch {
-                operationType = nil
-            }
+        case .divide: catchError()
         }
     }
     
@@ -79,7 +86,7 @@ private extension ViewController {
         }
     }
     
-    func percentPressed(){
+    func percentPressed() {
         if let _ = operationType {
             displayValue = firstNumber * displayValue / 100
         } else {
