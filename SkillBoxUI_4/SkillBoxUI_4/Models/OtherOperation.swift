@@ -6,7 +6,7 @@
 //
 
 enum OtherOperation: String {
-    case deleteLastNumber = " "
+    case deleteLastNumber = "delete.left"
     case deleteAllNumber = "AC"
     case percentPressed = "%"
     case plusAndMinus = "+/-"

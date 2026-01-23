@@ -7,14 +7,14 @@
 	objects = {
 
 /* Begin PBXFileReference section */
-		3BE6EC3F2F1BC73D004EDB1B /* SkillBoxUI_4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkillBoxUI_4.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3BB415C92F20393A00BB3102 /* SkillBoxUI_4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkillBoxUI_4.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
 		3BE6EC512F1BC73E004EDB1B /* Exceptions for "SkillBoxUI_4" folder in "SkillBoxUI_4" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				Info.plist,
+				Resources/Info.plist,
 			);
 			target = 3BE6EC3E2F1BC73D004EDB1B /* SkillBoxUI_4 */;
 		};
@@ -46,16 +46,8 @@
 			isa = PBXGroup;
 			children = (
 				3BE6EC412F1BC73D004EDB1B /* SkillBoxUI_4 */,
-				3BE6EC402F1BC73D004EDB1B /* Products */,
+				3BB415C92F20393A00BB3102 /* SkillBoxUI_4.app */,
 			);
-			sourceTree = "<group>";
-		};
-		3BE6EC402F1BC73D004EDB1B /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				3BE6EC3F2F1BC73D004EDB1B /* SkillBoxUI_4.app */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -80,7 +72,7 @@
 			packageProductDependencies = (
 			);
 			productName = SkillBoxUI_4;
-			productReference = 3BE6EC3F2F1BC73D004EDB1B /* SkillBoxUI_4.app */;
+			productReference = 3BB415C92F20393A00BB3102 /* SkillBoxUI_4.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -108,7 +100,7 @@
 			mainGroup = 3BE6EC362F1BC73D004EDB1B;
 			minimizedProjectReferenceProxies = 1;
 			preferredProjectObjectVersion = 77;
-			productRefGroup = 3BE6EC402F1BC73D004EDB1B /* Products */;
+			productRefGroup = 3BE6EC362F1BC73D004EDB1B;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -146,7 +138,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = SkillBoxUI_4/Info.plist;
+				INFOPLIST_FILE = SkillBoxUI_4/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -176,7 +168,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = SkillBoxUI_4/Info.plist;
+				INFOPLIST_FILE = SkillBoxUI_4/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
