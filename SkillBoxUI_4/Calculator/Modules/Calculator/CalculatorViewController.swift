@@ -43,7 +43,6 @@ final class CalculatorViewController: UIViewController {
         setupView()
         setupConstraints()
         makerButtons()
-        
         presenter.viewDidLoad()
     }
 }
