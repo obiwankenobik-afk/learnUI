@@ -11,7 +11,7 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		3BE6EC512F1BC73E004EDB1B /* Exceptions for "SkillBoxUI_4" folder in "SkillBoxUI_4" target */ = {
+		3BD3B1782F45FC2F0041D68F /* Exceptions for "Calculator" folder in "SkillBoxUI_4" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Resources/Info.plist,
@@ -21,12 +21,12 @@
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		3BE6EC412F1BC73D004EDB1B /* SkillBoxUI_4 */ = {
+		3BE6EC412F1BC73D004EDB1B /* Calculator */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				3BE6EC512F1BC73E004EDB1B /* Exceptions for "SkillBoxUI_4" folder in "SkillBoxUI_4" target */,
+				3BD3B1782F45FC2F0041D68F /* Exceptions for "Calculator" folder in "SkillBoxUI_4" target */,
 			);
-			path = SkillBoxUI_4;
+			path = Calculator;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -45,7 +45,7 @@
 		3BE6EC362F1BC73D004EDB1B = {
 			isa = PBXGroup;
 			children = (
-				3BE6EC412F1BC73D004EDB1B /* SkillBoxUI_4 */,
+				3BE6EC412F1BC73D004EDB1B /* Calculator */,
 				3BB415C92F20393A00BB3102 /* SkillBoxUI_4.app */,
 			);
 			sourceTree = "<group>";
@@ -66,7 +66,7 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				3BE6EC412F1BC73D004EDB1B /* SkillBoxUI_4 */,
+				3BE6EC412F1BC73D004EDB1B /* Calculator */,
 			);
 			name = SkillBoxUI_4;
 			packageProductDependencies = (
@@ -83,7 +83,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 2610;
-				LastUpgradeCheck = 2610;
+				LastUpgradeCheck = 2620;
 				TargetAttributes = {
 					3BE6EC3E2F1BC73D004EDB1B = {
 						CreatedOnToolsVersion = 26.1.1;
@@ -138,7 +138,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = SkillBoxUI_4/Resources/Info.plist;
+				INFOPLIST_FILE = Calculator/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -168,7 +168,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = SkillBoxUI_4/Resources/Info.plist;
+				INFOPLIST_FILE = Calculator/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -242,12 +242,14 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = Calculator/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 26.1;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -299,11 +301,13 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = Calculator/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 26.1;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				VALIDATE_PRODUCT = YES;
 			};

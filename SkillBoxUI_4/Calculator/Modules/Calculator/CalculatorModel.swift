@@ -6,7 +6,7 @@
 
 import UIKit
 
-final class ButtonLogic {
+final class CalculatorModel {
     private var firstNumber: Double = 0
     private var operationType: MathOperation?
     
@@ -21,9 +21,9 @@ final class ButtonLogic {
 }
 
 // MARK: - Логика
-extension ButtonLogic {
+extension CalculatorModel {
     /// проверка на целое число
-    private func formatTextDouble (for number: Double) -> String {
+    func formatTextDouble (for number: Double) -> String {
         return number.truncatingRemainder(dividingBy: 1) == 0
         ? "\(Int(number))"
         : "\(number)"
@@ -119,7 +119,7 @@ extension ButtonLogic {
 }
 
 // MARK: - Взаимодействия с кнопками
-extension ButtonLogic  {
+extension CalculatorModel  {
     /// нажатие 0-9
     func numberPressed(_ digit: String) {
         if Double(displayText) == nil {

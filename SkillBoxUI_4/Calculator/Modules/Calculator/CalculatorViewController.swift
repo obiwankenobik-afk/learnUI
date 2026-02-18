@@ -7,8 +7,8 @@
 
 import UIKit
 
-final class ViewController: UIViewController {
-    private let logic = ButtonLogic()
+final class CalculatorViewController: UIViewController {
+    private lazy var presenter: CalculatorPresenter = CalculatorPresenter(view: self)
     ///Лейбл над кнопками
     private lazy var displayLabel: UILabel = {
         let label = UILabel()
@@ -40,15 +40,15 @@ final class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setupView()
         setupConstraints()
         makerButtons()
         
+        presenter.viewDidLoad()
     }
 }
 
-private extension ViewController {
+private extension CalculatorViewController {
     ///Делаем вью и накидываем на нее лейбл и кнопки
     private func setupView() {
         view.backgroundColor = .black
@@ -103,41 +103,36 @@ private extension ViewController {
         }
     }
     
+    // MARK: Нажатия
+
     @objc private func numberPressed(_ sender: UIButton) {
         guard let digit = sender.titleLabel?.text else { return }
-        logic.numberPressed(digit)
-        updateDisplay()
+        presenter.numberPressed(digit)
     }
-    
+
     @objc private func operationPressed(_ sender: UIButton) {
         guard let symbol = sender.titleLabel?.text,
               let operation = MathOperation(rawValue: symbol) else { return }
         
-        logic.activeComputing(operation)
-        updateDisplay()
+        presenter.operationPressed(operation)
     }
-    
+
     @objc private func equalityPressed(_ sender: UIButton) {
-        logic.equalityPressed()
-        updateDisplay()
+        presenter.equalityPressed()
     }
-    
+
     @objc private func otherOperationPressed(_ sender: UIButton) {
         if let title = sender.titleLabel?.text,
            let operation = OtherOperation(rawValue: title) {
-            logic.calculateOtherOperation(operation)
+            presenter.otherOperationPressed(operation)
         } else {
-            logic.calculateOtherOperation(.deleteLastNumber)
+            presenter.otherOperationPressed(.deleteLastNumber)
         }
-        updateDisplay()
-    }
-    
-    private func updateDisplay() {
-        displayLabel.text = logic.displayText
     }
 }
 
-#Preview {
-    ViewController()
+extension CalculatorViewController: CalculatorViewProtocol {
+    func updateDisplay(text: String) {
+        displayLabel.text = text
+    }
 }
-
